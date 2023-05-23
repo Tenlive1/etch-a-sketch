@@ -23,23 +23,21 @@ creategrid(16,16);
 
 
 const cols = document.querySelectorAll('.col');
-
+let held = false
 cols.forEach((div) =>{
-    let held =false;
     div.addEventListener('mousedown',()=>{
-        held =true;
         div.style.backgroundColor = "black";
-        cols.forEach((test) => {
-            if(held){
-                test.addEventListener('mouseover',()=>{
-                    test.style.backgroundColor = "black";
-                });
-            }
-        });
+        held = true;
     });
     div.addEventListener('mouseup',()=>{
         held = false;
-        console.log(held);
     });
+
+    div.addEventListener('mouseover',()=>{
+        if(held){
+            div.style.backgroundColor = "black";
+        }
+    });
+
 })
 
