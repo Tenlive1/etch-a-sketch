@@ -1,5 +1,6 @@
 
 const container = document.querySelector('#container');
+document.body.setAttribute('draggable',false);
 function creategrid(rows,cols){
 
     for(let x=0; x<rows; x++){
@@ -29,7 +30,7 @@ cols.forEach((div) =>{
         div.style.backgroundColor = "black";
         held = true;
     });
-    div.addEventListener('mouseup',()=>{
+    document.body.addEventListener('mouseup',()=>{
         held = false;
     });
 
