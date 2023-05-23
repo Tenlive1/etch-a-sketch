@@ -1,18 +1,21 @@
 body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 0;
     margin: 0;
+    height: 100vh;
 }
 #container{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-}
-#div-container{
-    display: flex;
+    width: 500px;
     
-    width: 480px;
-    height: 480px;
+}
+ul{
+    margin: 0;
 }
 .square{
     width: 30px;
