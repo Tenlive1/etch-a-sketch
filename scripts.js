@@ -12,7 +12,7 @@ function creategrid(rows,cols){
             let col = document.createElement('div');
             col.classList.add("col");
             col.id = y;
-            col.style = "border: 1px lightgray; border-style: solid; box-sizing: border-box; flex-basis:100%;";
+            col.style = "border: 1px lightgray; border-style: solid; flex-basis:100%;";
             col.setAttribute('draggable',false);
             col.setAttribute('ondragstart',"return false;");
             col.setAttribute('ondrop',"return false;");

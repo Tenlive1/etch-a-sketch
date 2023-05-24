@@ -8,23 +8,12 @@ body{
 }
 #container{
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
     width: 500px;
     height:500px;
     
 }
 
-.square{
-    max-width: 100%;
-    max-height: 100%;
-    border: 1px lightgray;
-    border-style: solid;
-    box-sizing: border-box;    
-}
-
 #container > div{
-    flex-basis:  100%;
-    flex: 1 0 auto;
+    flex: 1 0 100%;
 }
