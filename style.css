@@ -11,6 +11,8 @@ body{
     flex-wrap: wrap;
     width: 500px;
     height:500px;
+    border: 1px black;
+    border-style: solid;
     
 }
 
