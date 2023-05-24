@@ -1,6 +1,6 @@
 
 const container = document.querySelector('#container');
-document.body.setAttribute('draggable',false);
+
 function creategrid(rows,cols){
 
     for(let x=0; x<rows; x++){
@@ -13,9 +13,13 @@ function creategrid(rows,cols){
             col.classList.add("col");
             col.id = y;
             col.style = "width: 30px; height: 30px; border: 1px lightgray; border-style: solid; box-sizing: border-box";
+            col.setAttribute('draggable',false);
+            col.setAttribute('ondragstart',"return false;");
+            col.setAttribute('ondrop',"return false;");
             row.appendChild(col);
         }
         row.style = "display: flex;";
+        row.setAttribute('draggable',false);
         container.appendChild(row);
     };
 
@@ -26,14 +30,17 @@ creategrid(16,16);
 const cols = document.querySelectorAll('.col');
 let held = false
 cols.forEach((div) =>{
+    
     div.addEventListener('mousedown',()=>{
-        div.style.backgroundColor = "black";
-        held = true;
+        if(document.body.style.cursor != "move"){
+            div.style.backgroundColor = "black";
+            held = true;
+        }
+        
     });
     document.body.addEventListener('mouseup',()=>{
         held = false;
     });
-
     div.addEventListener('mouseover',()=>{
         if(held){
             div.style.backgroundColor = "black";
