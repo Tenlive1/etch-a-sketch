@@ -12,13 +12,13 @@ function creategrid(rows,cols){
             let col = document.createElement('div');
             col.classList.add("col");
             col.id = y;
-            col.style = "width: 30px; height: 30px; border: 1px lightgray; border-style: solid; box-sizing: border-box";
+            col.style = "border: 1px lightgray; border-style: solid; box-sizing: border-box; flex-basis:100%;";
             col.setAttribute('draggable',false);
             col.setAttribute('ondragstart',"return false;");
             col.setAttribute('ondrop',"return false;");
             row.appendChild(col);
         }
-        row.style = "display: flex;";
+        row.style = "display: flex; ";
         row.setAttribute('draggable',false);
         container.appendChild(row);
     };
