@@ -27,10 +27,10 @@ function creategrid(rows,cols){
 creategrid(16,16);
 
 
-
-
-
-
+function colorwheel(){
+    const usercolor = document.querySelector('#color-wheel');
+    return usercolor.value;
+}
 
 
 const cols = document.querySelectorAll('.col');
@@ -41,7 +41,7 @@ cols.forEach((div) =>{
     div.style = "border: 1px lightgray; border-style: solid; flex-basis:100%"; // making the grid
     div.addEventListener('mousedown',()=>{
         if(document.body.style.cursor != "move"){
-            div.style.backgroundColor = "black";
+            div.style.backgroundColor = colorwheel();
             
             held = true;
         }
@@ -52,7 +52,7 @@ cols.forEach((div) =>{
     });
     div.addEventListener('mouseover',()=>{
         if(held){
-            div.style.backgroundColor = "black";
+            div.style.backgroundColor = colorwheel();
         }
     });
 

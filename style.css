@@ -37,3 +37,21 @@ body{
 #container{
     display: flex;
 }
+#color-wheel{
+    background-color: transparent;
+    width: 100px;
+    height: 100px; 
+    border-radius: 50%;
+    appearance: none;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+#color-wheel::-webkit-color-swatch {
+    border-radius:50%;
+    border: 5px solid lightgray;
+}
+#color-wheel::-moz-color-swatch{
+    border-radius:50%;
+    border: 5px solid lightgray;
+}
