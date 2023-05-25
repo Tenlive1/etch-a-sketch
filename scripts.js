@@ -1,5 +1,5 @@
 
-const container = document.querySelector('#container');
+const sketch = document.querySelector('#sketch-container');
 
 function creategrid(rows,cols){
 
@@ -20,11 +20,17 @@ function creategrid(rows,cols){
         }
         row.style = "display: flex; ";
         row.setAttribute('draggable',false);
-        container.appendChild(row);
+        sketch.appendChild(row);
     };
 
 }
 creategrid(16,16);
+
+
+
+
+
+
 
 
 const cols = document.querySelectorAll('.col');
