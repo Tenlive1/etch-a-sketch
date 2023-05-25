@@ -33,28 +33,52 @@ function colorwheel(){
 }
 
 
-const cols = document.querySelectorAll('.col');
+
+function removegrid(){
+    while (sketch.firstChild) {
+    sketch.removeChild(sketch.firstChild);
+    }
+}
 
 
-let held = false
-cols.forEach((div) =>{
-    div.style = "border: 1px lightgray; border-style: solid; flex-basis:100%"; // making the grid
-    div.addEventListener('mousedown',()=>{
-        if(document.body.style.cursor != "move"){
-            div.style.backgroundColor = colorwheel();
+
+
+const amounts = document.querySelector('#amount');
+
+amounts.addEventListener('input',()=>{
+    const text = document.querySelector('.text');
+    text.textContent = amounts.value + "x" + amounts.value;
+    removegrid();
+    creategrid(amounts.value,amounts.value);
+    draw();
+});
+
+function draw(){
+    const cols = document.querySelectorAll('.col');
+    let held = false
+    cols.forEach((div) =>{
+        div.style = "border: 1px lightgray; border-style: solid; flex-basis:100%"; // making the grid
+        div.addEventListener('mousedown',()=>{
+            if(document.body.style.cursor != "move"){
+                div.style.backgroundColor = colorwheel();
+                
+                held = true;
+            }
             
-            held = true;
-        }
-        
-    });
-    document.body.addEventListener('mouseup',()=>{
-        held = false;
-    });
-    div.addEventListener('mouseover',()=>{
-        if(held){
-            div.style.backgroundColor = colorwheel();
-        }
-    });
+        });
+        document.body.addEventListener('mouseup',()=>{
+            held = false;
+        });
+        div.addEventListener('mouseover',()=>{
+            if(held){
+                div.style.backgroundColor = colorwheel();
+            }
+        });
 
-})
+    })
+}
+
+    
+
+draw();
 
