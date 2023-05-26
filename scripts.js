@@ -76,6 +76,13 @@ function draw(){
                 div.style.borderStyle = "solid";
             }
         })
+        if(checkbox.checked == false){
+            console.log("test");
+            div.style.borderStyle = "none";// making the grid gridless
+        }else{
+            div.style.borderStyle = "solid";
+        }
+
         div.addEventListener('mousedown',()=>{
             if(document.body.style.cursor != "move"){
                 div.style.backgroundColor = colorwheel();
@@ -96,7 +103,7 @@ function draw(){
     })
 }
 
-    
+ 
 
 draw();
 
