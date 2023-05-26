@@ -44,6 +44,13 @@ function removegrid(){
 
 
 const amounts = document.querySelector('#amount');
+const clear = document.querySelector('#clear');
+
+clear.addEventListener('click',()=>{
+    removegrid();
+    creategrid(amounts.value,amounts.value);
+    draw();
+})
 
 amounts.addEventListener('input',()=>{
     const text = document.querySelector('.text');
@@ -53,11 +60,22 @@ amounts.addEventListener('input',()=>{
     draw();
 });
 
+
+
 function draw(){
     const cols = document.querySelectorAll('.col');
+    const checkbox = document.querySelector('#Grid');
     let held = false
     cols.forEach((div) =>{
-        div.style = "border: 1px lightgray; border-style: solid; flex-basis:100%"; // making the grid
+         
+        checkbox.addEventListener('change',()=>{
+            if(checkbox.checked == false){
+                console.log("test");
+                div.style.borderStyle = "none";// making the grid gridless
+            }else{
+                div.style.borderStyle = "solid";
+            }
+        })
         div.addEventListener('mousedown',()=>{
             if(document.body.style.cursor != "move"){
                 div.style.backgroundColor = colorwheel();

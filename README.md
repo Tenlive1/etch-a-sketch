@@ -5,7 +5,7 @@ another odin project
 
 to do list
 
-i want to have a scale that can adjust the amount of square in the 500 by 500 px
+i want to have a scale that can adjust the amount of square in the 500 by 500 px --- 
 
 have a clear button
 have a button or a slider to make the grid or not make the grid
