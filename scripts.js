@@ -1,7 +1,7 @@
 
 const sketch = document.querySelector('#sketch-container');
 
-function creategrid(rows,cols){
+function creategrid(rows,cols){ //making the grid
 
     for(let x=0; x<rows; x++){
         let row = document.createElement('div');
@@ -24,17 +24,17 @@ function creategrid(rows,cols){
     };
 
 }
-creategrid(16,16);
+creategrid(16,16); // default grid size
 
 
-function colorwheel(){
+function colorwheel(){// this function return the user color that they wanted
     const usercolor = document.querySelector('#color-wheel');
     return usercolor.value;
 }
 
 
 
-function removegrid(){
+function removegrid(){// removing the grid
     while (sketch.firstChild) {
     sketch.removeChild(sketch.firstChild);
     }
@@ -46,13 +46,13 @@ function removegrid(){
 const amounts = document.querySelector('#amount');
 const clear = document.querySelector('#clear');
 
-clear.addEventListener('click',()=>{
+clear.addEventListener('click',()=>{// this will hear if the user press the clear button
     removegrid();
     creategrid(amounts.value,amounts.value);
     draw();
 })
 
-amounts.addEventListener('input',()=>{
+amounts.addEventListener('input',()=>{// this is the slider and it will check the input so this way the grid change as well
     const text = document.querySelector('.text');
     text.textContent = amounts.value + "x" + amounts.value;
     removegrid();
@@ -62,7 +62,7 @@ amounts.addEventListener('input',()=>{
 
 
 
-function draw(){
+function draw(){ // this will allow the user to draw on the etch-a sketch
     const cols = document.querySelectorAll('.col');
     const checkbox = document.querySelector('#Grid');
     let held = false

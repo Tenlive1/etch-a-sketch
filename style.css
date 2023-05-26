@@ -7,6 +7,10 @@ body{
     margin: 0;
     min-height: 100vh;
 }
+#container{
+    display: flex;
+}
+/*etch-a-sketch*/
 #sketch-container{
     display: flex;
     flex-wrap: wrap;
@@ -14,13 +18,13 @@ body{
     height:500px;
     border: 1px black;
     border-style: solid;
-
     
 }
 
 #sketch-container > div{
     flex: 1 0 100%;
 }
+/*header*/
 #header{
     display: flex;
     align-items: center;
@@ -28,6 +32,7 @@ body{
     font-family: 'Pangolin', cursive;
     flex: 1 1 100%;
 }
+/*footer*/
 #footer{
     display: flex;
     font-size: 18px;
@@ -35,9 +40,7 @@ body{
     font-family: 'Pangolin', cursive;
     flex: 1 1 100%;
 }
-#container{
-    display: flex;
-}
+/*menu stuff*/
 #color-wheel{
     background-color: transparent;
     width: 100px;
@@ -47,6 +50,10 @@ body{
     border: none;
     -webkit-appearance: none;
     -moz-appearance: none;
+}
+.color-wheel-container{
+    display: flex;
+    justify-content: center;
 }
 #color-wheel::-webkit-color-swatch {
     border-radius:50%;
@@ -99,7 +106,14 @@ body{
     justify-content: space-evenly;
     align-items: center;
 }
+/*ect*/
 .col{
     flex-basis: 100%;
     border: 1px lightgray;
 }
+.text{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 18px;
+}
+
